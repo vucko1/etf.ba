@@ -8,7 +8,7 @@
 	$password= $_REQUEST['password'];
 	$email = $_REQUEST['email'];
 	$aemail = $_REQUEST['altemail'];
-	$institution_email_regex="/^([a-z])+([0-9])+\@etf.unsa.ba/";
+	$institution_email_regex="/^([a-z0-9.])+\@etf.unsa.ba/";
 	
 	if (strlen($user)<3 || strlen($password)<3 || strlen($aemail)<4 || strlen($email)<4){
 		echo  '{"success": false , "error": "Input too short"}';
@@ -52,8 +52,6 @@
 	// Kreiraj approve ID koji cemo poslati na email za provjeru
 	$approveid=md5(generatePassword(20,3).uniqid());
 	
-
-	// Dodati getSlack za password
 	$sql="INSERT INTO user (password,institution_email,secondary_email,fk_supergroup,nickname,sh_box_nickname,approve_id,username, firstname, chat_nickname, super_approved ) values (sha1(:password),:email,:aemail,:sgroup,:user,:user,:approveid,:user,:user, :user, 1)";
 	$sth1 = $db->prepare($sql);
 	$sth1->execute(array(':user' => $user,
