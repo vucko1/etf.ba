@@ -2428,12 +2428,12 @@ Candy.Core.Event = function(self, Strophe, $) {
 			if (msg.children("delete").length>0) {
 				var delnick = msg.children("delete").text();
 				console.log('primio delete poruku za '+roomJid+' : '+delnick);
-				Candy.View.Pane.Room.getPane(roomJid, '.message-pane').children().each(function() {
-					var msgnick = $(this)[0].innerText.trim();
+				Candy.View.Pane.Room.getPane(roomJid, '.message-pane').children().each(function(index, itm) {
+					var msgnick = $(itm)[0].innerText.trim();
 					msgnick = msgnick.substring(0,delnick.length);
 					console.log("msgnick: "+msgnick+" delnick: "+delnick);
 					if (msgnick==delnick)
-						$(this)[0].style.display = 'none';
+						$(itm)[0].style.display = 'none';
 				});
 			}
                     }
