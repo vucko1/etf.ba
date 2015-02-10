@@ -3,7 +3,7 @@
 	session_start();
 	
 	include ("db.php");
-	if ($_SESSION['sesija']['logged'] == "true" ) {
+	if ($_SESSION['user']['logged'] == "true" ) {
 		$uid =$_SESSION['user']['uid'];
 
 		$rid= intval($_REQUEST['did']);
