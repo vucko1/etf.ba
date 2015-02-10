@@ -8,6 +8,9 @@ app.filter('imgy2bFilter', function ($filter) {
 			var isfiltered = 0;			
 			if (value.search(imageMatch) >= 0) {
 				value=value.replace(imageMatch, '<a href="$1" target="_blank"><img width="100%" src="$1" /></a>');
+                if (value.search("pokit.org") >= 0) { 
+                    value=value.replace("get/?", 'get/');
+                }
 				isfiltered = 1;
 			}
 
