@@ -4,7 +4,8 @@ var app = angular.module('app', [
     'ngRoute',
     'ngResource',
     'AuthentificationModule',
-    'ngSanitize'
+    'ngSanitize',
+    'angularFileUpload'
 ])
 .config(function($routeProvider, $locationProvider) {
             $routeProvider
