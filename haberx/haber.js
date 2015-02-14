@@ -2429,7 +2429,7 @@ Candy.Core.Event = function(self, Strophe, $) {
 				var delnick = msg.children("delete").text();
 				console.log('primio delete poruku za '+roomJid+' : '+delnick);
 				Candy.View.Pane.Room.getPane(roomJid, '.message-pane').children().each(function(index, itm) {
-					var msgnick = $(itm)[0].innerText.trim();
+					var msgnick = $(itm)[0].children[1].textContent.trim();
 					msgnick = msgnick.substring(0,delnick.length);
 					console.log("msgnick: "+msgnick+" delnick: "+delnick);
 					if (msgnick==delnick)
