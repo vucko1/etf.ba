@@ -4,6 +4,12 @@ body {
   background-color: #ebf0f0;
 }
 
+.mightybar.dragover {
+  background-color: #1abc9c;
+  color: white;
+  border: 5px dashed white;
+  padding-top: 3px;
+}
 
 .mighty-textarea{
   height: 90px !important;
