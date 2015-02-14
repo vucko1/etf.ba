@@ -223,6 +223,10 @@ Candy.Core = function(self, Strophe, $) {
             }
         } else if (jidOrHost && nick) {
             // anonymous connect
+	    if (nick[0] != "ǂ") {
+		alert("Nije dozvoljena promjena nicka!");
+		return;
+	    }
             _connection.connect(_getEscapedJidFromJid(jidOrHost) + "/" + _options.resource, null, Candy.Core.Event.Strophe.Connect);
             _user = new self.ChatUser(null, nick);
         } else if (jidOrHost) {
