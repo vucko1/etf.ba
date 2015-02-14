@@ -2748,7 +2748,9 @@ Candy.View.Observer = function(self, $) {
             break;
 
           case "conflict":
-            Candy.View.Pane.Chat.Modal.showNicknameConflictForm(args.roomJid);
+            if (!Candy.Core.isAnonymousConnection()) Candy.View.Pane.Chat.Modal.showNicknameConflictForm(args.roomJid);
+	    else
+		    Candy.View.Observer.Chat.ShowMsg($.i18n._("nicknameConflict"),"#E54028",0);
             break;
 
           case "registration-required":
