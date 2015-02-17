@@ -5,10 +5,10 @@ body {
 }
 
 .mightybar.dragover {
-  background-color: #1abc9c;
-  color: white;
-  border: 5px dashed white;
-  padding-top: 3px;
+    border: 4px dashed darkred;
+    padding-top: 4px;
+    opacity: 1;
+    color: darkred;
 }
 
 .mighty-textarea{
